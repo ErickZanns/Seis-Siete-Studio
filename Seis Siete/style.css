@@ -1,0 +1,310 @@
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background-color: #0b0f17;
+  color: #e2e8f0;
+  line-height: 1.6;
+}
+
+/* Encabezado principal */
+.hero {
+  text-align: center;
+  padding: 64px 20px;
+  background: linear-gradient(135deg, #111827, #1e1b4b);
+  border-bottom: 1px solid #1f2937;
+}
+
+.etiqueta {
+  display: inline-block;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  background-color: rgba(129, 140, 248, 0.16);
+  color: #a5b4fc;
+  padding: 4px 12px;
+  border-radius: 999px;
+  margin-bottom: 14px;
+}
+
+.hero h1 {
+  font-size: 2.2rem;
+  color: #f8fafc;
+  margin-bottom: 12px;
+}
+
+.subtitulo {
+  max-width: 560px;
+  margin: 0 auto;
+  color: #94a3b8;
+}
+
+.btn-perfil {
+  display: inline-block;
+  margin-top: 14px;
+  padding: 8px 16px;
+  background-color: #4f46e5;
+  color: #f8fafc;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.btn-perfil:hover {
+  background-color: #6366f1;
+}
+
+/* Contenedor general */
+.contenedor {
+  max-width: 1050px;
+  margin: 48px auto;
+  padding: 0 20px;
+}
+
+.bloque {
+  margin-bottom: 64px;
+}
+
+.bloque h2 {
+  text-align: center;
+  margin-bottom: 12px;
+  font-size: 1.7rem;
+  color: #f8fafc;
+}
+
+.descripcion-seccion {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 32px;
+  color: #94a3b8;
+}
+
+/* Tarjetas de equipo */
+.tarjetas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 24px;
+}
+
+.tarjeta {
+  background-color: #131a26;
+  border: 1px solid #243044;
+  border-radius: 14px;
+  padding: 24px;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.tarjeta:hover {
+  transform: translateY(-4px);
+  border-color: #6366f1;
+}
+
+.avatar-equipo {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 14px;
+  border: 2px solid #6366f1;
+}
+
+.rol {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #818cf8;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.tarjeta h3 {
+  margin-top: 6px;
+  margin-bottom: 8px;
+  font-size: 1.2rem;
+  color: #f1f5f9;
+}
+
+.tarjeta p {
+  font-size: 0.95rem;
+  color: #94a3b8;
+}
+
+/* Galería de trabajos */
+.galeria-trabajos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px;
+}
+
+.trabajo-card {
+  background-color: #131a26;
+  border: 1px solid #243044;
+  border-radius: 14px;
+  overflow: hidden;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.trabajo-card:hover {
+  transform: translateY(-4px);
+  border-color: #818cf8;
+}
+
+.trabajo-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.trabajo-info {
+  padding: 16px;
+}
+
+.trabajo-info h3 {
+  font-size: 1.05rem;
+  color: #f8fafc;
+  margin-bottom: 4px;
+}
+
+/* Bloque PDF */
+.bloque-pdf {
+  margin-top: 40px;
+  background-color: #111827;
+  border: 1px solid #1f2937;
+  border-radius: 16px;
+  padding: 24px;
+}
+
+.bloque-pdf h3 {
+  font-size: 1.25rem;
+  color: #f8fafc;
+  margin-bottom: 6px;
+}
+
+.descripcion-pdf {
+  font-size: 0.92rem;
+  color: #94a3b8;
+  margin-bottom: 20px;
+}
+
+.galeria-pdf {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.hoja-pdf {
+  background-color: #0b0f17;
+  border: 1px solid #243044;
+  border-radius: 12px;
+  padding: 10px;
+}
+
+.hoja-pdf img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+}
+
+.hoja-pdf figcaption {
+  margin-top: 8px;
+  font-size: 0.85rem;
+  color: #cbd5e1;
+  text-align: center;
+}
+
+/* Footer */
+.site-footer {
+  background-color: #111827;
+  border-top: 1px solid #1f2937;
+  color: #e4e4e7;
+  padding: 2.5rem 1.5rem;
+}
+
+.footer-container {
+  max-width: 1050px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+}
+
+.footer-section h3 {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.personal-data p {
+  font-size: 0.92rem;
+  margin-bottom: 0.5rem;
+  color: #94a3b8;
+}
+
+.social-icons {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.social-icon-item {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #1e293b;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+}
+
+.social-icon-item svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+.comment-shell {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.comment-box-mock {
+  width: 100%;
+  min-height: 75px;
+  padding: 0.65rem;
+  border-radius: 6px;
+  border: 1px solid #243044;
+  background-color: #0b0f17;
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+.comment-btn-mock {
+  align-self: flex-start;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  background-color: #1e293b;
+  color: #94a3b8;
+  font-size: 0.88rem;
+}
+
+.footer-bottom {
+  max-width: 1050px;
+  margin: 2rem auto 0;
+  padding-top: 1.25rem;
+  border-top: 1px solid #1f2937;
+  text-align: center;
+  font-size: 0.82rem;
+  color: #64748b;
+}

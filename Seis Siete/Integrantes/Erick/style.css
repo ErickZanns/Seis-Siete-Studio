@@ -1,0 +1,734 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background-color: #050811;
+  color: #e2e8f0;
+  line-height: 1.6;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Fondo de cuadrícula futurista sutil */
+.grid-bg {
+  position: fixed;
+  inset: 0;
+  background-image: 
+    linear-gradient(to right, rgba(0, 243, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 243, 255, 0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Animación de entrada controlada por JS */
+.animar-entrada {
+  opacity: 0;
+  transform: translateY(35px) scale(0.98);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.animar-entrada.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Cabecera Futurista */
+.hero {
+  text-align: center;
+  padding: 72px 20px 60px;
+  background: radial-gradient(circle at top, rgba(139, 92, 246, 0.22), transparent 60%),
+              linear-gradient(180deg, #090d1c 0%, #050811 100%);
+  border-bottom: 1px solid rgba(0, 243, 255, 0.25);
+}
+
+.badge-cyber {
+  display: inline-block;
+  font-family: monospace;
+  font-size: 0.82rem;
+  letter-spacing: 2px;
+  color: #00f3ff;
+  border: 1px solid rgba(0, 243, 255, 0.4);
+  background: rgba(0, 243, 255, 0.08);
+  padding: 5px 14px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+}
+
+.titulo-neon {
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  font-weight: 800;
+  letter-spacing: 3px;
+  color: #ffffff;
+  text-shadow: 0 0 15px rgba(0, 243, 255, 0.5), 0 0 30px rgba(139, 92, 246, 0.4);
+  margin-bottom: 12px;
+}
+
+.subtitulo {
+  max-width: 620px;
+  margin: 0 auto 24px;
+  color: #94a3b8;
+  font-size: 1.05rem;
+}
+
+/* Botones estilo Sci-Fi */
+.btn-cyber {
+  display: inline-block;
+  padding: 10px 22px;
+  font-family: monospace;
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #00f3ff;
+  background: rgba(0, 243, 255, 0.08);
+  border: 1px solid #00f3ff;
+  border-radius: 6px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 0 12px rgba(0, 243, 255, 0.15);
+}
+
+.btn-cyber:hover {
+  background: #00f3ff;
+  color: #050811;
+  box-shadow: 0 0 22px rgba(0, 243, 255, 0.65);
+  transform: translateY(-2px);
+}
+
+.btn-full {
+  width: 100%;
+  margin-top: 8px;
+}
+
+/* Contenedor y Paneles */
+.contenedor {
+  max-width: 1120px;
+  margin: 48px auto;
+  padding: 0 20px;
+}
+
+.panel-futurista {
+  background: rgba(13, 19, 36, 0.78);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(139, 92, 246, 0.28);
+  border-radius: 16px;
+  padding: 32px;
+  margin-bottom: 48px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+}
+
+.encabezado-seccion {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid rgba(0, 243, 255, 0.18);
+  padding-bottom: 12px;
+}
+
+.codigo-sec {
+  font-family: monospace;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #00f3ff;
+  background: rgba(0, 243, 255, 0.12);
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+.encabezado-seccion h2 {
+  font-size: 1.65rem;
+  color: #f8fafc;
+  letter-spacing: 0.5px;
+}
+
+.intro-sec {
+  color: #94a3b8;
+  margin-bottom: 28px;
+}
+
+/* Identidad Creativa */
+.perfil-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px;
+  align-items: center;
+}
+
+.perfil-info h3 {
+  font-size: 1.35rem;
+  color: #00f3ff;
+  margin-bottom: 12px;
+}
+
+.perfil-info p {
+  color: #cbd5e1;
+  margin-bottom: 12px;
+}
+
+.tags-habilidades {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.tags-habilidades span {
+  font-family: monospace;
+  font-size: 0.82rem;
+  color: #d8b4fe;
+  background: rgba(139, 92, 246, 0.18);
+  border: 1px solid rgba(139, 92, 246, 0.45);
+  padding: 4px 12px;
+  border-radius: 999px;
+}
+
+/* Categorías y Tarjetas de Proyectos */
+.subtitulo-categoria {
+  font-family: monospace;
+  font-size: 1.15rem;
+  color: #00f3ff;
+  margin-bottom: 18px;
+  letter-spacing: 1px;
+}
+
+.margen-superior {
+  margin-top: 42px;
+}
+
+.grid-proyectos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 24px;
+}
+
+.card-proyecto {
+  background: #090e1d;
+  border: 1px solid rgba(0, 243, 255, 0.2);
+  border-radius: 14px;
+  padding: 16px;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-proyecto:hover {
+  transform: translateY(-6px);
+  border-color: #00f3ff;
+  box-shadow: 0 8px 25px rgba(0, 243, 255, 0.18);
+}
+
+.marco-holo {
+  background: #050811;
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  border-radius: 10px;
+  padding: 8px;
+  overflow: hidden;
+}
+
+.marco-holo img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  border-radius: 6px;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.card-proyecto:hover .marco-holo img {
+  transform: scale(1.04);
+}
+
+.marco-holo figcaption {
+  font-family: monospace;
+  font-size: 0.78rem;
+  color: #a5b4fc;
+  text-align: center;
+  margin-top: 8px;
+}
+
+.card-detalles {
+  margin-top: 14px;
+}
+
+.card-detalles h4 {
+  font-size: 1.12rem;
+  color: #f8fafc;
+  margin-bottom: 6px;
+}
+
+.card-detalles p {
+  font-size: 0.92rem;
+  color: #94a3b8;
+  margin-bottom: 6px;
+}
+
+.herramienta {
+  color: #00f3ff !important;
+  font-size: 0.86rem !important;
+}
+
+/* Experiencia Multimedia */
+.grid-media {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.modulo-media {
+  background: #090e1d;
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.modulo-media h3 {
+  color: #f8fafc;
+  font-size: 1.12rem;
+  margin-bottom: 6px;
+}
+
+.modulo-media p {
+  color: #94a3b8;
+  font-size: 0.9rem;
+  margin-bottom: 14px;
+}
+
+audio,
+video {
+  width: 100%;
+  border-radius: 8px;
+  outline: none;
+}
+
+/* Fondo interactivo de puntos */
+#fondo-puntos {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+header,
+main,
+.panel-carrusel-grande,
+footer {
+  position: relative;
+  z-index: 1;
+}
+
+.form-futurista {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.campo label {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #cbd5e1;
+}
+
+.campo input[type="text"],
+.campo input[type="email"],
+.campo select,
+.campo textarea {
+  width: 100%;
+  padding: 11px 14px;
+  background: #050811;
+  border: 1px solid rgba(0, 243, 255, 0.3);
+  border-radius: 8px;
+  color: #f8fafc;
+  font-family: inherit;
+  font-size: 0.95rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus {
+  outline: none;
+  border-color: #00f3ff;
+  box-shadow: 0 0 12px rgba(0, 243, 255, 0.25);
+}
+
+.grupo-radios {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.grupo-radios label {
+  font-weight: normal;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.consola-respuesta {
+  font-family: monospace;
+  font-size: 0.9rem;
+  color: #00f3ff;
+  text-align: center;
+  margin-top: 6px;
+}
+
+/* Navegación final y Footer */
+.navegacion-final {
+  text-align: center;
+  margin: 32px 0;
+}
+
+.pie-futurista {
+  text-align: center;
+  padding: 28px 20px;
+  border-top: 1px solid rgba(0, 243, 255, 0.2);
+  font-family: monospace;
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+.perfil-grid-grande {
+  display: grid;
+  grid-template-columns: minmax(280px, 400px) 1fr;
+  gap: 48px;
+  align-items: center;
+  margin-top: 16px;
+}
+
+.foto-identidad img {
+  height: 380px;
+  object-fit: cover;
+}
+
+.sub-etiqueta {
+  display: inline-block;
+  font-family: monospace;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  color: #a855f7;
+  margin-bottom: 10px;
+}
+
+.perfil-info-grande h3 {
+  font-size: clamp(1.6rem, 2.8vw, 2.3rem);
+  color: #00f3ff;
+  line-height: 1.25;
+  margin-bottom: 18px;
+}
+
+.perfil-info-grande p {
+  font-size: 1.12rem;
+  color: #cbd5e1;
+  margin-bottom: 16px;
+  max-width: 760px;
+}
+
+@media (max-width: 850px) {
+  .perfil-grid-grande {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .foto-identidad img {
+    height: 300px;
+  }
+}
+
+/* =========================================================
+   SECCIÓN B: CARRUSEL DE CARTAS GRANDE (MÁS COMPACTO QUE A)
+   ========================================================= */
+.panel-carrusel-grande {
+  width: 90vw;
+  max-width: 1220px;
+  margin: 56px auto;
+  padding: 36px 28px;
+}
+
+.carrusel-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.carrusel-pista {
+  display: flex;
+  gap: 28px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding: 16px 8px 24px;
+  scrollbar-width: none; /* Firefox */
+}
+
+.carrusel-pista::-webkit-scrollbar {
+  display: none; /* Chrome / Edge */
+}
+
+.card-carrusel {
+  flex: 0 0 72%;
+  max-width: 780px;
+  scroll-snap-align: center;
+  background: #090e1d;
+  border: 1px solid rgba(0, 243, 255, 0.22);
+  border-radius: 16px;
+  padding: 22px;
+  opacity: 0.55;
+  transform: scale(0.95);
+  transition: transform 0.35s ease, opacity 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.card-carrusel.activa {
+  opacity: 1;
+  transform: scale(1);
+  border-color: #00f3ff;
+  box-shadow: 0 10px 32px rgba(0, 243, 255, 0.2);
+}
+
+.card-carrusel .marco-holo img {
+  height: 340px;
+  object-fit: cover;
+}
+
+.tag-categoria {
+  display: inline-block;
+  font-family: monospace;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 4px 10px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
+
+.tag-3d {
+  color: #00f3ff;
+  background: rgba(0, 243, 255, 0.12);
+  border: 1px solid rgba(0, 243, 255, 0.35);
+}
+
+.tag-vector {
+  color: #d8b4fe;
+  background: rgba(168, 85, 247, 0.15);
+  border: 1px solid rgba(168, 85, 247, 0.4);
+}
+
+.btn-carrusel {
+  flex-shrink: 0;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 1px solid #00f3ff;
+  background: rgba(5, 8, 17, 0.9);
+  color: #00f3ff;
+  font-size: 1.1rem;
+  cursor: pointer;
+  z-index: 2;
+  transition: all 0.25s ease;
+}
+
+.btn-carrusel:hover {
+  background: #00f3ff;
+  color: #050811;
+  box-shadow: 0 0 18px rgba(0, 243, 255, 0.7);
+}
+
+.carrusel-indicadores {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.punto-ind {
+  width: 28px;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(148, 163, 184, 0.25);
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.punto-ind.activo {
+  width: 46px;
+  background: #00f3ff;
+  box-shadow: 0 0 10px rgba(0, 243, 255, 0.8);
+}
+
+@media (max-width: 768px) {
+  .card-carrusel {
+    flex: 0 0 88%;
+  }
+  .card-carrusel .marco-holo img {
+    height: 230px;
+  }
+  .btn-carrusel {
+    width: 38px;
+    height: 38px;
+  }
+}
+
+/* =========================================================
+   ESPECTRO DE AUDIO DE BARRAS
+   ========================================================= */
+#espectro-audio {
+  display: block;
+  width: 100%;
+  height: 58px;
+  margin-top: 10px;
+  background: rgba(5, 8, 17, 0.75);
+  border: 1px solid rgba(0, 243, 255, 0.25);
+  border-radius: 8px;
+}
+
+/* =========================================================
+   SECCIÓN ARTE GENERATIVO - ERICK SÁNCHEZ
+   ========================================================= */
+.seccion-canvas-erick {
+  max-width: 1100px;
+  margin: 48px auto;
+  padding: 32px;
+  background: linear-gradient(145deg, #110e24 0%, #1a1536 100%);
+  border: 1px solid rgba(104, 117, 214, 0.32);
+  border-radius: 20px;
+  color: #f1f5f9;
+  box-shadow: 0 18px 40px rgba(9, 7, 20, 0.45);
+}
+
+.canvas-header-erick {
+  margin-bottom: 24px;
+}
+
+.badge-erick {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: rgba(76, 53, 153, 0.35);
+  border: 1px solid #6875d6;
+  color: #c7d2fe;
+  margin-bottom: 10px;
+}
+
+.canvas-header-erick h2 {
+  font-size: 1.85rem;
+  margin-bottom: 8px;
+  color: #ffffff;
+}
+
+.canvas-header-erick p {
+  color: #cbd5e1;
+  line-height: 1.55;
+  max-width: 720px;
+}
+
+.canvas-layout-erick {
+  display: grid;
+  grid-template-columns: 1fr 260px;
+  gap: 24px;
+  align-items: center;
+}
+
+.marco-lienzo-erick {
+  background: #090714;
+  padding: 10px;
+  border-radius: 14px;
+  border: 1px solid rgba(196, 52, 86, 0.4);
+  box-shadow: 0 0 25px rgba(76, 53, 153, 0.25);
+}
+
+#lienzo-erick {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.controles-erick {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.controles-erick h3 {
+  font-size: 1.15rem;
+  margin: 0;
+}
+
+.sub-controles {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  margin: 0 0 4px;
+}
+
+.controles-erick hr {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  margin: 4px 0;
+}
+
+.btn-canvas-erick {
+  width: 100%;
+  padding: 11px 14px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  font-weight: 600;
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.btn-canvas-erick:hover {
+  transform: translateY(-2px);
+}
+
+.btn-indigo {
+  background: #372873;
+  border-color: #6875d6;
+  color: #e0e7ff;
+}
+
+.btn-carmesi {
+  background: #591c34;
+  border-color: #c43456;
+  color: #ffe4e6;
+}
+
+.btn-generar-erick {
+  background: linear-gradient(90deg, #4c3599, #c43456);
+  color: #ffffff;
+}
+
+.btn-descargar-erick {
+  background: #1e293b;
+  border-color: #475569;
+  color: #f8fafc;
+}
+
+@media (max-width: 860px) {
+  .canvas-layout-erick {
+    grid-template-columns: 1fr;
+  }
+}
