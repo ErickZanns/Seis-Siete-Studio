@@ -453,10 +453,21 @@ body {
   transform: translateY(-5px);
 }
 
-.acento-rosa:hover { box-shadow: 6px 6px 0 var(--rosa); }
-.acento-cian:hover { box-shadow: 6px 6px 0 var(--cian); }
-.acento-lima:hover { box-shadow: 6px 6px 0 var(--lima); }
-.acento-negro:hover { box-shadow: 6px 6px 0 var(--negro); }
+.acento-rosa:hover {
+  box-shadow: 6px 6px 0 var(--rosa);
+}
+
+.acento-cian:hover {
+  box-shadow: 6px 6px 0 var(--cian);
+}
+
+.acento-lima:hover {
+  box-shadow: 6px 6px 0 var(--lima);
+}
+
+.acento-negro:hover {
+  box-shadow: 6px 6px 0 var(--negro);
+}
 
 /* Proporción exacta vertical A4 (1 : 1.414) */
 .marco-a4 {
@@ -541,9 +552,21 @@ body {
   margin-bottom: 12px;
 }
 
-.tag-lima { background: var(--lima); color: var(--negro); }
-.tag-negro { background: var(--negro); color: var(--blanco); }
-.tag-cian { background: var(--cian); color: var(--negro); border: 2px solid var(--negro); }
+.tag-lima {
+  background: var(--lima);
+  color: var(--negro);
+}
+
+.tag-negro {
+  background: var(--negro);
+  color: var(--blanco);
+}
+
+.tag-cian {
+  background: var(--cian);
+  color: var(--negro);
+  border: 2px solid var(--negro);
+}
 
 .card-media h3 {
   font-size: 1.35rem;
@@ -641,10 +664,25 @@ body {
   transform: translateY(-2px);
 }
 
-.btn-rosa { background: var(--rosa); color: var(--blanco); }
-.btn-cian { background: var(--cian); color: var(--negro); }
-.btn-lima { background: var(--lima); color: var(--negro); }
-.btn-negro-lab { background: var(--negro); color: var(--blanco); }
+.btn-rosa {
+  background: var(--rosa);
+  color: var(--blanco);
+}
+
+.btn-cian {
+  background: var(--cian);
+  color: var(--negro);
+}
+
+.btn-lima {
+  background: var(--lima);
+  color: var(--negro);
+}
+
+.btn-negro-lab {
+  background: var(--negro);
+  color: var(--blanco);
+}
 
 /* =========================================================
    SECCIÓN 5: CONTACTO Y CIERRE
@@ -707,6 +745,7 @@ body {
    RESPONSIVE
    ========================================================= */
 @media (max-width: 900px) {
+
   .hero-editorial,
   .grid-blender-horizontal,
   .banner-manifiesto,
@@ -755,9 +794,20 @@ body {
 }
 
 /* Posiciones base separadas para cada racimo */
-#rock-group-1 { top: 5%; left: 1.5%; }
-#rock-group-2 { top: 42%; right: 1.5%; }
-#rock-group-3 { top: 74%; left: 2%; }
+#rock-group-1 {
+  top: 5%;
+  left: 1.5%;
+}
+
+#rock-group-2 {
+  top: 42%;
+  right: 1.5%;
+}
+
+#rock-group-3 {
+  top: 74%;
+  left: 2%;
+}
 
 .estrella-item {
   position: absolute;
@@ -772,19 +822,70 @@ body {
 }
 
 /* Distribución Racimo 1 (Arriba izquierda: 1 grande derecha, 1 mediana izq, 1 chica abajo) */
-.star-g1-a { width: 64px; top: 18px; left: 8px; transform: rotate(-14deg); }
-.star-g1-b { width: 118px; top: 0px; left: 82px; transform: rotate(12deg); }
-.star-g1-c { width: 46px; top: 96px; left: 42px; transform: rotate(22deg); }
+.star-g1-a {
+  width: 64px;
+  top: 18px;
+  left: 8px;
+  transform: rotate(-14deg);
+}
+
+.star-g1-b {
+  width: 118px;
+  top: 0px;
+  left: 82px;
+  transform: rotate(12deg);
+}
+
+.star-g1-c {
+  width: 46px;
+  top: 96px;
+  left: 42px;
+  transform: rotate(22deg);
+}
 
 /* Distribución Racimo 2 (Medio derecha: 1 grande izq, 1 mediana der, 1 chica abajo) */
-.star-g2-a { width: 105px; top: 14px; left: 26px; transform: rotate(-10deg); }
-.star-g2-b { width: 58px; top: 48px; left: 144px; transform: rotate(18deg); }
-.star-g2-c { width: 42px; top: 122px; left: 96px; transform: rotate(-20deg); }
+.star-g2-a {
+  width: 105px;
+  top: 14px;
+  left: 26px;
+  transform: rotate(-10deg);
+}
+
+.star-g2-b {
+  width: 58px;
+  top: 48px;
+  left: 144px;
+  transform: rotate(18deg);
+}
+
+.star-g2-c {
+  width: 42px;
+  top: 122px;
+  left: 96px;
+  transform: rotate(-20deg);
+}
 
 /* Distribución Racimo 3 (Abajo izquierda: 1 grande der, 1 mediana izq, 1 chica arriba) */
-.star-g3-a { width: 102px; top: 44px; left: 98px; transform: rotate(8deg); }
-.star-g3-b { width: 56px; top: 68px; left: 32px; transform: rotate(-16deg); }
-.star-g3-c { width: 38px; top: 18px; left: 74px; transform: rotate(25deg); }
+.star-g3-a {
+  width: 102px;
+  top: 44px;
+  left: 98px;
+  transform: rotate(8deg);
+}
+
+.star-g3-b {
+  width: 56px;
+  top: 68px;
+  left: 32px;
+  transform: rotate(-16deg);
+}
+
+.star-g3-c {
+  width: 38px;
+  top: 18px;
+  left: 74px;
+  transform: rotate(25deg);
+}
 
 @media (max-width: 768px) {
   .grupo-estrellas {

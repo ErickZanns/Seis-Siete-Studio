@@ -17,7 +17,7 @@ body {
 .grid-bg {
   position: fixed;
   inset: 0;
-  background-image: 
+  background-image:
     linear-gradient(to right, rgba(0, 243, 255, 0.04) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(0, 243, 255, 0.04) 1px, transparent 1px);
   background-size: 40px 40px;
@@ -30,7 +30,7 @@ body {
   opacity: 0;
   transform: translateY(35px) scale(0.98);
   transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .animar-entrada.visible {
@@ -43,7 +43,7 @@ body {
   text-align: center;
   padding: 72px 20px 60px;
   background: radial-gradient(circle at top, rgba(139, 92, 246, 0.22), transparent 60%),
-              linear-gradient(180deg, #090d1c 0%, #050811 100%);
+    linear-gradient(180deg, #090d1c 0%, #050811 100%);
   border-bottom: 1px solid rgba(0, 243, 255, 0.25);
 }
 
@@ -444,6 +444,7 @@ footer {
     grid-template-columns: 1fr;
     gap: 28px;
   }
+
   .foto-identidad img {
     height: 300px;
   }
@@ -473,11 +474,13 @@ footer {
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   padding: 16px 8px 24px;
-  scrollbar-width: none; /* Firefox */
+  scrollbar-width: none;
+  /* Firefox */
 }
 
 .carrusel-pista::-webkit-scrollbar {
-  display: none; /* Chrome / Edge */
+  display: none;
+  /* Chrome / Edge */
 }
 
 .card-carrusel {
@@ -575,9 +578,11 @@ footer {
   .card-carrusel {
     flex: 0 0 88%;
   }
+
   .card-carrusel .marco-holo img {
     height: 230px;
   }
+
   .btn-carrusel {
     width: 38px;
     height: 38px;
